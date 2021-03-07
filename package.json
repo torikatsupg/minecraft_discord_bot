@@ -1,0 +1,23 @@
+{
+  "name": "minecraft_discord_bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "hotload": "ts-node-dev --respawn src/index.ts"
+  },
+  "devDependencies": {
+    "@zoltu/typescript-transformer-append-js-extension": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "sirv-cli": "^1.0.11",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.2.3",
+    "yarn-run-all": "^3.1.1"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
