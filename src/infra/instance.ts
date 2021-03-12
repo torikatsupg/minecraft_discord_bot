@@ -12,5 +12,5 @@ export function stop(): void {
 }
 
 function createCommand(cmd: "start" | "stop"): string {
-  return `/snap/bin/gcloud --account=${gcpConfig.servece_account_id} compute instances ${cmd} ${gcpConfig.minecraft_instance_id} --project ${gcpConfig.gcp_project_id} --zone ${gcpConfig.minecraft_instance_zone}`
+  return `/usr/bin/gcloud --account=${gcpConfig.servece_account_id} compute instances ${cmd} ${gcpConfig.minecraft_instance_id} --project ${gcpConfig.gcp_project_id} --zone ${gcpConfig.minecraft_instance_zone}`
 }
