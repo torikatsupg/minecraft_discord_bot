@@ -13,7 +13,6 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
-  console.log(message.content)
   if (message.author.bot) {
     return
   }
@@ -37,13 +36,16 @@ client.on('message', message => {
 })
 
 
+const START_COMMAND_RECIEVED_REPLY = "サーバーを起動しています。"
 const START_COMMAND_REPLY = "サーバーを起動しました。"
+const STOP_COMMAND_RECIEVED_REPLY = "サーバーを停止しています。"
 const STOP_COMMAND_REPLY = "サーバーを停止しました。"
 const UNKOWN_COMMAND_REPLY = "コマンド一覧\nサーバーの起動\n```/start```\n\nサーバーの停止\n```/stop```"
 const ERROR_REPLY = "エラーが発生しました"
 
 function onStartCommand(recievedMessage: Discord.Message): void {
   try {
+    sendMessage(recievedMessage, START_COMMAND_RECIEVED_REPLY)
     start()
     sendMessage(recievedMessage, START_COMMAND_REPLY)
   } catch (e) {
@@ -53,6 +55,7 @@ function onStartCommand(recievedMessage: Discord.Message): void {
 
 function onStopCommand(recievedMessage: Discord.Message): void {
   try {
+    sendMessage(recievedMessage, STOP_COMMAND_RECIEVED_REPLY)
     stop()
     sendMessage(recievedMessage, STOP_COMMAND_REPLY)
   } catch (e) {
